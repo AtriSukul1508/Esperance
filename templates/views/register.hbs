@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .container {
+            background-image: url("images/bkg18.svg");
+            height: 100vh;
+            width: 100vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: start;
+            padding: .8rem 1.3rem;
+            /* padding-top: 10px; */
+            background-color: #0f0c2163;
+            /* height: 40px; */
+        }
+
+        .navbar .website-name {
+            font-size: 2.2rem;
+            color: #ec42be;
+        }
+
+        .nav-left {
+            color: #ec42be;
+            font-size: 35px;
+            font-family: Arial;
+        }
+
+        .content {
+            position: absolute;
+            top: 20%;
+            left: 65%;
+            border-radius: 8px;
+        }
+
+        .content form {
+            width: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(14, 14, 97, 0.52);
+            padding: 10px;
+            border-radius: 8px;
+            backdrop-filter: blur(16px);
+            height: 470px;
+        }
+
+        .content form input {
+            margin: 10px;
+            color: #fff;
+        }
+
+        .content form input[type="text"],
+        .content form input[type="tel"],
+        .content form input[type="email"],
+        .content form input[type="password"] {
+            /* padding: 10px; */
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border-bottom: 2px solid #ff7200;
+            width: 17rem;
+            height: 35px;
+        }
+
+        .content form input[type="text"]:focus,
+        .content form input[type="tel"]:focus,
+        .content form input[type="email"]:focus,
+        .content form input[type="password"]:focus {
+            outline: none;
+        }
+
+        .content form h2 {
+            width: 13vw;
+            font-family: sans-serif;
+            text-align: center;
+            color: #0f0c21;
+            font-size: 22px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            margin: 2px;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            padding: 5px 8px;
+        }
+
+        ::placeholder {
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content form input[type="submit"] {
+            width: 15rem;
+            height: 35px;
+            background: #ff7200;
+            border: none;
+            margin-top: 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #0f0c21;
+            font-weight: bold;
+            transition: 0.3s ease;
+
+        }
+
+        .content form input[type="submit"]:hover {
+            background: #fff;
+            color: #ff7200;
+
+        }
+
+        .content form .sign-up-text {
+            text-align: center;
+            color: #fff;
+            font-size: 1.0625rem;
+            padding-top: .8rem;
+        }
+
+        .content form .sign-up-text a {
+            text-decoration: none;
+            color: #ff7200;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="nav-left" style="display: flex;align-items: center;">
+            <img src="images/logo.png" width="120" height="80" alt="">
+            <h3>Esperance</h3>
+        </div>
+        <div class="content">
+
+            <form action="/register" method="POST" class="signup-form">
+                <h2>Create Account</h2>
+                <input type="text" name="username" placeholder="Enter Name">
+                <input type="email" name="email" placeholder="Enter Email">
+                <input type="tel" name="phone" id="" placeholder="Enter Mobile No">
+                <input type="password" name="password" placeholder="Enter Password">
+                <input type="password" name="confirmpassword" id="cpassword" placeholder="Re-enter Password">
+                <input type="submit" value="Create Account" id="signup-button">
+                <p class="sign-up-text">Already have an account ?<br>
+                    <a href="/">Sign in</a></a>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    width: 100%;
+    background-size: cover;
+    height: 180vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+}
+
+.navbar{
+    display:flex;
+    width: 100vw;
+    height: 10vh;
+   
+    z-index: 1;
+    background-color: #0f0c2163;
+}
+
+.icon{
+    width: 200px;
+    float: left;
+    height: 70px;
+    z-index: 1;
+    margin-left: 6vw;
+}
+
+.logo{
+    color: #ec42be;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px;
+    z-index: 1;
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 29vw;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+    z-index: 1;
+}
+
+ul li a{
+    text-decoration: none;
+    color: rgb(248, 246, 246);
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+    padding: 10px;
+}
+
+ul li a:hover{
+    color: #0f0c21;
+    border-radius: 20px;
+    transition-duration: 0.1s;
+    background-color: white;
+
+}
+
+
+.btn{
+    width: 100px;
+    height: 40px;
+    background: #ff7200;
+    border: 2px solid #ff7200;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    color: #000;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.content{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: #fff;
+    position: relative;
+}
+
+.content .par{
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 20px;
+    margin-top: 9%;
+    letter-spacing: 2px;
+}
+
+.content .cn{
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+    
+}
+
+.content .cn a{
+    text-decoration: none;
+    color: #000;
+    transition: .3s ease;
+}
+
+.cn:hover{
+    background-color: #fff;
+}
+
+.content span{
+    color: #ff7200;
+    font-size: 65px
+}
+
+.login-form{
+    width: 250px;
+    height: 340px;
+    background-color: rgba(14, 14, 97, 0.692);
+    position: absolute;
+    top: 18vh;
+    justify-content: center;
+    text-align: right;
+    left: 55vw;
+    transform: translate(0%,-5%);
+    border-radius: 10px;
+    padding: 25px;
+    backdrop-filter: blur(30px);
+
+}
+
+.login-form h2{
+    width: 9vw;
+    font-family: sans-serif;
+    text-align: center;
+    color: #522a0a;
+    font-size: 22px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 2px;
+    padding: 8px;
+}
+
+.login-form input{
+    width: 240px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #ff7200;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+.login-form input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color: #fff;
+    font-family: Arial;
+}
+form a:hover{
+    text-decoration: underline !important;
+}
+.btnn{
+    width: 240px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+}
+.btnn:hover{
+    background: #fff;
+    color: #ff7200;
+}
+.btnn a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+.login-form .link{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center;
+}
+.login-form .link a{
+    text-decoration: none;
+    color: #ff7200;
+}
+.liw{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.icons a{
+    text-decoration: none;
+    color: #fff;
+}
+.icons ion-icon{
+    color: #fff;
+    font-size: 30px;
+    padding-left: 14px;
+    padding-top: 5px;
+    transition: 0.3s ease;
+}
+.icons ion-icon:hover{
+    color: #ff7200;
+} */
+
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .container {
+            background-image: url("images/bkg18.svg");
+            height: 620px;
+            width: 100vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* .navbar{
+    display: flex;
+    justify-content: start;
+    padding:.8rem 1.3rem;
+    padding-top: 10px;
+    background-color: #0f0c2163;
+    height: 40px;
+} */
+        .navbar .website-name {
+            font-size: 2.2rem;
+            color: #ec42be;
+        }
+
+        .content-ls {
+            width: 400px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.544);
+            /* background-color: rgba(5, 5, 72, 0.844); */
+            position: absolute;
+            top: 30vh;
+            justify-content: center;
+            left: 60vw;
+            transform: translate(0%, -5%);
+            border-radius: 10px;
+            padding: 25px;
+            backdrop-filter: blur(40px);
+            color: rgb(12, 4, 42);
+            /* color: rgb(255, 255, 255); */
+        }
+
+        .line-1 {
+            font-size: 35px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .rest-line {
+            margin: 15px;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        /* width: 240px;
+height: 35px;
+background: transparent;
+border-bottom: 1px solid #ff7200;
+border-top: none;
+border-right: none;
+border-left: none;
+color: #fff;
+font-size: 15px;
+letter-spacing: 1px;
+margin-top: 30px;
+font-family: sans-serif; */
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* margin:8px 10px ; */
+            padding: 10px;
+            /* background-color: ; */
+        }
+
+        nav .nav-right ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav .nav-right ul li {
+            margin: 10px;
+        }
+
+        nav .nav-right ul li a {
+            color: white;
+            text-decoration: none;
+            transition: .3s all;
+            padding: 6px;
+        }
+
+        nav .nav-right ul li a:hover {
+            color: #0f0c21;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        nav .nav-right ul .user-profile-icon {
+            /* margin-top: 5px; */
+
+        }
+
+        nav .nav-right ul .user-profile-icon i {
+
+            font-size: 2rem;
+            color: #ff7200;
+            cursor: text;
+            text-decoration: none;
+            transition: .3s ease;
+        }
+
+        nav .nav-right ul .user-profile-icon a:hover {
+            /* color: #fff; */
+            background-color: transparent;
+        }
+
+        nav .nav-right ul .user-profile-icon a:hover i {
+            color: #fff;
+        }
+
+        nav .nav-right ul .user-profile-name{
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #fff;
+            cursor: text;
+
+        }
+
+        nav .nav-left {
+            color: #ec42be;
+            font-size: 35px;
+            font-family: Arial;
+        }
+
+        .footer-content {
+            /* display: flex;
+            flex-direction: row;
+            width: 96vw;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 597px;
+            border-radius: 10px; */
+            /* backdrop-filter: blur(5px);
+            background-color: #0f0c21;
+            margin-left: 2px;
+            padding: 30px; */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0f0c21;
+            padding: 30px;
+        }
+
+        @media(max-width:880px) {
+            .footer-content {
+                flex-direction: column !important;
+            }
+
+        }
+
+        .footer-content .newsletter {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-content .newsletter form {
+            display: flex;
+            /* flex-direction: column; */
+            align-items: center;
+
+        }
+
+        .footer-content .newsletter form input[type="text"],
+        .footer-content .newsletter form input[type="email"] {
+            padding: 8px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            margin: 8px;
+            color: #0f0c21;
+
+        }
+
+        .footer-content .newsletter form input[type="text"]::placeholder,
+        .footer-content .newsletter form input[type="email"]::placeholder {
+            color: #0f0c21;
+        }
+
+        .footer-content .newsletter form input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #ff7200;
+            color: #0f0c21;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            height: 30px;
+            text-align: center;
+            font-weight: bold;
+            transition: .3s ease;
+        }
+
+        .footer-content .newsletter form input[type="submit"]:hover {
+            background-color: #fff;
+            color: #ff7200;
+        }
+
+        .footer-content .newsletter form .contact-footer {
+            width: 100px;
+        }
+
+        .icons-footer a i {
+            font-size: 2rem;
+            margin: 5px;
+            color: #ff7200;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav class="navbar">
+            <div class="nav-left" style="display: flex;align-items: center;">
+                <img src="images/logo.png" width="120" height="80" alt="">
+                <h3>Esperance</h3>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="/survey">SURVEY</a></li>
+                    <li class="user-profile-name">{{username}}</li>
+                    <li class="user-profile-icon"> <a href=""><i class="fa-solid fa-circle-user"></i></a> </li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+        <div class="content-ls">
+            <div class="line-1"> Need help ?</div>
+            <div class="rest-line">Are you feeling down lately ?</div>
+            <div class="rest-line"> Are you worried about a relationship or feeling suicidal ?</div>
+            <div class="rest-line"> Do you have any questions about mental health ?</div>
+            <div class="rest-line"> Go with the Survey... </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <div style="text-align: center;">
+                <h2 class="footer-heading" style="color: #ec42be;">DepreSsion</h2>
+                <div class="desc" style="width: 250px;color: white;text-align: justify;">Lorem ipsum dolor sit, amet
+                    consectetur adipisicing elit. Cupiditate id iure
+                    unde. Voluptas molestias recusandae alias eum quam libero!</div>
+            </div>
+
+            <div class="newsletter">
+                <h4 style="color: #ff7200;">Subscribe to our newsletter</h4>
+                <form action="" style="margin-top: 10px;">
+                    <input type="text" name="name-newsletter" id="name-newsletter" placeholder="Name">
+                    <input type="email" name="mail-newsletter" id="mail-newsletter" placeholder="Email">
+                    <input type="submit" value="Submit" id="submit-newsletter" style="width: 100px;">
+                </form>
+
+            </div>
+            <div class="contact-footer">
+                <div class="icons-footer">
+                    <a href=""><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""> <i class="fa-brands fa-facebook"></i> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
