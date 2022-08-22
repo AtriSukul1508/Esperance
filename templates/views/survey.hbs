@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackathon depressed</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #7BF3FA;
+      overflow: hidden;
+    }
+
+    .navbar {
+      display: flex;
+      width: 100vw;
+      height: 10vh;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      /* margin: auto; */
+      z-index: 1;
+      background-color: #0f0c2163;
+    }
+
+
+    .icon {
+      /* width: 200px; */
+      float: left;
+      height: 10vh;
+      z-index: 1;
+      margin-left: 6vw;
+    }
+
+    .logo {
+      color: #ec42be;
+      font-size: 35px;
+      font-family: Arial;
+      padding-left: 20px;
+      float: left;
+      /* padding-top: 10px;
+    margin-top: 5px; */
+      z-index: 1;
+    }
+
+    /* .menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+    margin-left: 29vw;
+} */
+
+    ul {
+      float: left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    ul li {
+      list-style: none;
+      margin-left: 62px;
+      margin-top: 27px;
+      font-size: 14px;
+      z-index: 1;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: rgb(248, 246, 246);
+      font-family: Arial;
+      font-weight: bold;
+      transition: 0.4s ease-in-out;
+      z-index: 1;
+      padding: 10px;
+    }
+
+    ul li a:hover {
+      color: #0f0c21;
+      border-radius: 20px;
+      transition-duration: 0.1s;
+      background-color: white;
+
+    }
+
+
+    .container {
+      display: flex;
+      /* flex-direction: row; */
+      justify-content: space-evenly;
+    }
+
+    .container-1 {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #290a7c;
+      border-radius: 10px;
+      padding: 1px 20px;
+      height: 550px;
+      margin-left: 0;
+      padding-bottom: 10px;
+    }
+
+    .container-1 h3 {
+      padding: 20px;
+    }
+
+    .container-1 input {
+      padding: 12px;
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      padding-left: 45px;
+      /* border: 1px solid #963c18; */
+    }
+
+    .container-1 .field {
+      margin: 10px;
+      position: relative;
+    }
+
+    /* .container */
+    .container-1 .label-input {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+    }
+
+    .container-1 .label-input label {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .container-1 .input-field .fas,
+    .fa-solid {
+      color: white;
+    }
+
+    .container-1 .input-field .first-icon {
+      position: absolute;
+      top: 31px;
+      left: 0px;
+      background-color: rgb(11, 11, 121);
+      padding: 11.5px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    .container-1 .input-field .second-icon {
+      position: absolute;
+      top: 43px;
+      right: 10px;
+    }
+
+    .container-2 img {
+      margin-top: 80px;
+      width: 600px;
+      height: 600px;
+    }
+
+    input[type="submit"] {
+      width: 200px;
+      padding: 10px;
+      /* text-combine-upright: ; */
+      background-color: #1c0769;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      /* margin-left: 20px; */
+
+
+    }
+
+    input[type="submit"]:hover {
+      background-color: #b3a1f5;
+      color: #050534;
+      {{!-- border: #0e0e61 solid 0.5px; --}}
+    }
+
+    h3 {
+      color: #0e0e61;
+      text-align: center;
+      font-size: 27px;
+      /* margin-top: 5px; */
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-1" id="container-1">
+      <form action="/solution">
+        <h3 style="color: #ff7200;">We Just Want To Know</h3>
+        <div class="name-field field">
+          <div class="name-input input-field">
+            <div class="label-input">
+              <label for="username">What Shall We Call You?</label>
+              <input type="text" name="username" placeholder="Enter Your name" id="username" required>
+               <input type="text" name="state" readonly="readonly" value="${}" style="display:none;">
+            </div>
+            <i class="fa-solid fa-user first-icon"></i>
+          </div>
+
+        </div>
+        <div class="age-field field">
+          <div class="age-input input-field">
+            <div class="label-input">
+
+              <label for="userage">What is your age?</label>
+              <input type="number" name="userage" placeholder="Enter your age" id="userage" required>
+            </div>
+            <i class="fa-solid fa-arrow-up-1-9 first-icon"></i>
+
+          </div>
+        </div>
+        <div class="quiz-field" id="quiz-field">
+          <div class="field1 field">
+
+            <div class="age-input input-field">
+              <div class="label-input">
+
+                <label for="userday"> How are you feeling today ?(Rate in 1-10)</label>
+                <input type="text" id="day" name="userday" placeholder="Please answer" required>
+              </div>
+              <i class="fa-solid fa-spa first-icon"></i>
+
+            </div>
+          </div>
+          <div class="field1 field">
+
+            <div class="age-input input-field">
+              <div class="label-input">
+
+                <label for="userinfo">Have you visited a Therapist Before ?</label>
+                {{!-- <input type="text" id="therapist" name="userage" placeholder="Please answer"> --}}
+                <select  style="height: 38px;border-radius:6px;padding:8px;padding-left:40px;outline:none;border:none" required>
+                  <option name="userinfo" value="" disabled selected hidden>Please Choose...</option>
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
+              </div>
+              <i class="fa-solid fa-circle-check first-icon"></i>
+
+            </div>
+          </div>
+          <div class="field1 field">
+            <div class="textfield-input input-field">
+              <div class="label-input">
+
+                <label for="userexp"> Describe how are you feeling</label>
+                <textarea style="border-radius:8px;padding:6px;outline:none;border:none" name="userexp" rows="4" cols="40" placeholder="Write your answer" required></textarea>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="submit-btn">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+    <div class="container-2" id="container-2">
+
+      <img src="images/survey-bg.png" alt="Image">
+    </div>
+  </div>
+</body>
+<script>
+    const form = document.querySelector("form");
+    const userName= document.querySelector("#username");
+    const userAge = document.querySelector("#userage");
+    const dayRate = document.querySelector("#day");
+    const therapistAns = document.querySelector("#therapist")
+    {{!-- form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+    }) --}}
+</script>
+
+</html>

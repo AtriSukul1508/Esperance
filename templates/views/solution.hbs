@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <title>Solution</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-image: url("images/solution-bg.png");
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #3f3289;
+            align-items: center;
+        }
+
+        nav .nav-right ul {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav .nav-right ul li {
+            margin: 10px;
+        }
+
+        nav .nav-right ul li a {
+            color: white;
+            text-decoration: none;
+            transition: .3s all;
+            padding: 10px;
+        }
+
+        nav .nav-right ul li a:hover {
+            color: #0f0c21;
+            background-color: white;
+            border-radius: 20px;
+            transition-duration: 0.1s;
+
+        }
+
+
+        nav .nav-right ul .user-profile-icon i {
+
+            font-size: 2rem;
+            color: #ff7200;
+            cursor: text;
+            text-decoration: none;
+            transition: .3s ease;
+        }
+
+        nav .nav-right ul .user-profile-icon a:hover {
+            /* color: #fff; */
+            background-color: transparent;
+        }
+
+        nav .nav-right ul .user-profile-icon a:hover i {
+            color: #fff;
+        }
+
+        nav .nav-right ul .user-profile-name a:hover {
+            background-color: #3f3289;
+            color: #fff;
+            text-decoration: underline;
+
+        }
+
+        nav .nav-left {
+            color: #ec42be;
+            font-size: 35px;
+            font-family: Arial;
+        }
+
+        .section-home {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 30px;
+            background-color: #3f3289;
+        }
+
+        .section-home .hands-quote {
+            text-align: center;
+            margin-left: 100px;
+        }
+
+        .section-home .hands-quote h2 {
+            font-size: 5rem;
+            color: #fff;
+        }
+
+        .section-home .hands-quote h3 {
+            color: #ff7200;
+            font-size: 2.5rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .section-home .hands-quote h4 {
+            color: #0f0c21;
+            font-size: 22px;
+
+        }
+
+        .section-home img {
+            height: 500px;
+            width: 60vw;
+        }
+
+        .faq-bot {
+            width: 45px;
+            height: 45px;
+            background-color: #ff7200;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0px 0px 4px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1100;
+        }
+
+        .faq-bot i {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+
+
+        .main-content section {
+            height: 200px;
+            display: flex;
+            margin: 10px 0px;
+            text-align: center;
+        }
+
+        .main-content section .section-left {
+            width: 20vw;
+        }
+
+        .main-content section .section-right {
+            width: 70vw;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            color: #120c49;
+            backdrop-filter: blur(40px);
+            box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.597);
+            border-radius: 20px;
+            background-color: rgba(243, 216, 181, 0.708);
+
+        }
+
+        .section-right-heading {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            color: #6e4727;
+            padding-bottom: 10px;
+        }
+
+        .section-right-content {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+        }
+
+        .helpline-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+
+        }
+
+        .helpline-contact .contact-box {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .helpline-contact .contact-box .contact-box-1,
+        .helpline-contact .contact-box .contact-box-2 {
+            width: 300px;
+            border: none;
+            margin: 20px 3rem;
+            padding: 15px;
+            color: #ff7200;
+            text-align: center;
+            box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.597);
+            border-radius: 10px;
+            line-height: 24px;
+            backdrop-filter: blur(30px);
+            background-color: rgba(250, 235, 215, 0.911);
+        }
+
+        .tag {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+            color: #75326f;
+        }
+
+        .top-tag {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 5px 0px;
+            text-align: center;
+            color: #3f3289;
+            font-size: 1.7rem;
+            margin: 35px;
+        }
+
+        .helpline-contact .contact-box .contact-box-2 input {
+            padding: 5px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid #0f0c21;
+            margin: 5px;
+
+        }
+
+        .fa-paper-plane:hover {
+            color: #0f0c21;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: row;
+            /* width: 93vw; */
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            background-color: #0f0c21;
+            padding: 20px;
+        }
+
+        .footer-content .newsletter {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-content .newsletter form {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .footer-content .newsletter form input[type="text"],
+        .footer-content .newsletter form input[type="email"] {
+            padding: 8px;
+            border: none;
+            border-bottom: 1px solid #ff7200;
+            outline: none;
+            margin: 8px;
+            color: #fff;
+            background-color: transparent;
+
+        }
+
+        .footer-content .newsletter form input[type="text"]::placeholder,
+        .footer-content .newsletter form input[type="email"]::placeholder {
+            color: #fff;
+        }
+
+        .footer-content .newsletter form input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #ff7200;
+            color: #0f0c21;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            height: 30px;
+            text-align: center;
+            font-weight: bold;
+            transition: .3s ease;
+
+        }
+
+        .footer-content .newsletter form input[type="submit"]:hover {
+            color: #ff7200;
+            background-color: white;
+        }
+
+        .footer-content .newsletter form .contact-footer {
+            width: 100px;
+        }
+
+        .icons-footer a i {
+            font-size: 2rem;
+            margin: 5px;
+            color: #ff7200;
+        }
+
+        .icons-footer a i:hover {
+            color: #ffffff;
+        }
+
+        .faq-content {
+            display: none;
+            position: fixed;
+            bottom: 23px;
+            right: 35px;
+            border: 1px solid #0f0c21;
+            width: 300px !important;
+            /* height: 300px; */
+            padding: 10px;
+            margin: 25px;
+            border-radius: 8px;
+            background-color: #fff;
+            z-index: 1111;
+            overflow-y: scroll;
+        }
+
+        .faq-content .q {
+            border: 1px solid;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 5px;
+            color: #ff7200;
+            box-shadow: 0px 0px 2px #3f3289;
+        }
+
+
+        .faq-content .q span {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .faq-content .a span {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .faq-content .a {
+            color: #0f0c21;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-left" style="display: flex;align-items: center;">
+                <img src="images/logo.png" width="100" height="80" alt="logo">
+                <h3>Esperance</h3>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="/home">HOME</a></li>
+                    {{!-- <li><a href="#">ABOUT</a></li> --}}
+                    <li class="user-profile-name">{{username}}</li>
+                    <li class="user-profile-icon"> <a href=""><i class="fa-solid fa-circle-user"></i></a> </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="main">
+            <section class="section-home">
+                <div id="hands-quote" class="hands-quote">
+                    
+                    <!-- <h4>Hey Depressed Aatma,We are Here to help you</h4> -->
+
+                </div>
+                <img src="images/main-section-bg.jpg" alt="Image">
+                <!-- <a href='https://www.freepik.com/vectors/community'>Community vector created by pch.vector - www.freepik.com</a> -->
+            </section>
+        </div>
+        <section class="main-section-heading">
+            <h2 class="top-tag"> &nbsp; Let Us Help You &nbsp; </h2>
+        </section>
+        <div class="main-content">
+            <h2 class="tag" style="text-align: center;">Information</h2>
+            <section id="slider-container" class="slider-container">
+                <div class="swiper home-slider">
+                    <div class="swiper-wrapper" id="swiper-wrapper-1">
+                        <!-- Dynamic Sliders -->
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <!-- <h2 class="section-right-heading">Box Breathing</h2> -->
+                                <div class="section-right-content">
+                                    <h3>Your mental health matters. Mental health is just as important as physical
+                                        health and if you are not feeling good mentally, it should be attended to with
+                                        urgency.There is nothing to be ashamed of and it is absolutely normal to seek
+                                        help.<h3>
+                                </div>
+                                <a href="https://www.nimh.nih.gov/health/topics/caring-for-your-mental-health?utm_campaign=shareNIMH&utm_medium=Portal&utm_source=NIMHwebsite"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <!-- <h2 class="section-right-heading">Mindful Breathing</h2> -->
+                                <div class="section-right-content">
+                                    <h3>Depression is a common but serious mood disorder. It causes severe symptoms that
+                                        affect how you feel, think, and handle daily activities, such as sleeping,
+                                        eating, or working.</h3>
+                                </div>
+                                <a href="https://www.nimh.nih.gov/health/topics/depression" target="_blank">Read
+                                    More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <!-- <h1 class="section-right-heading">Meditation</h1> -->
+                                <div class="section-right-content">
+                                    <h3>Not everyone who is depressed experiences every symptom. Some people experience
+                                        only a few symptoms while others may experience many.
+                                        Well-meaning friends or family members may try to tell someone with depression
+                                        to “snap out of it,” or “just be positive.” Depression is not a sign of weakness
+                                        or a character flaw. Most people with depression need treatment to get better.
+                                        <h3>
+                                </div>
+                                <!-- <a href="https://www.insider.com/benefits-of-meditation" target="_blank">Read More</a> -->
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <!-- <h2 class="section-right-heading">4-7-8 reathing</h2> -->
+                                <div class="section-right-content">
+                                    <h3>Good mental health helps you cope with stress and can improve your quality of
+                                        life.
+                                        Topics like Mental Health, Depression and their importance are relatively new
+                                        concepts. Parents and Guardians may not understand the importance of them and
+                                        thus disregard them. But you deserve the help you need to get better and so you
+                                        should keep trying and not give up.<h3>
+                                </div>
+                                <a href="https://www.healthline.com/health/mental-health/parents-dont-believe-i-need-therapy#Move-forward-without-them
+                                " target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <!-- <h2 class="section-right-heading">4-7-8 reathing</h2> -->
+                                <div class="section-right-content">
+                                    <h3>Some additional links to trusted websites for professional guidance, therapy and resources.<h3>
+                                </div>
+                                <a href="Valueable-Links.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next" id="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+            <h2 class="tag" style="text-align: center;">Calming Activities</h2>
+            <section id="slider-container" class="slider-container">
+                <div class="swiper home-slider">
+
+                    <div class="swiper-wrapper" id="swiper-wrapper-1">
+                        <!-- Dynamic Sliders -->
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Box Breathing</h2>
+                                <div class="section-right-content">
+                                    <h3>It can lower blood pressure and provide an almost immediate sense of calm.The
+                                        slow holding of breath allows CO2 to build up in the blood. An increased blood
+                                        CO2 enhances the cardio-inhibitory response of the vagus nerve when you exhale
+                                        and stimulates your parasympathetic system.<h3>
+                                </div>
+                                <a href="https://www.healthline.com/health/box-breathing" target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Mindful Breathing</h2>
+                                <div class="section-right-content">
+                                    <h3>Mindful breathing is a very basic yet powerful mindfulness meditation practice.
+                                        The idea is simply to focus your attention on your breathing—to its natural
+                                        rhythm and flow and the way it feels on each inhale and exhale.</h3>
+                                </div>
+                                <a href="https://pronghornpsych.com/how-mindfulness-and-meditation-helps-depression/"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h1 class="section-right-heading">Meditation</h1>
+                                <div class="section-right-content">
+                                    <h3>The mental health benefits of meditation include better focus and concentration,
+                                        improved self-awareness and self-esteem, lower levels of stress and anxiety, and
+                                        fostering kindness. Meditation also has benefits for your physical health, as it
+                                        can improve your tolerance for pain and help fight substance addiction.<h3>
+                                </div>
+                                <a href="https://www.insider.com/benefits-of-meditation" target="_blank">Read More</a>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">4-7-8 reathing</h2>
+                                <div class="section-right-content">
+                                    <h3>Peoples with COPD who practiced controlled breathing techniques experienced
+                                        reduced symptoms of depression and anxiety. According to the American Institute
+                                        of Stress, slow abdominal breathing can help reduce stress levels by slowing
+                                        down your heart rate and lowering blood pressure.7 Additionally, it helps relax
+                                        tense muscles and increase oxygen intake, both of which aid relaxation.<h3>
+                                </div>
+                                <a href="https://www.medicalnewstoday.com/articles/breathing-techniques#deep"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Deep Breathing</h2>
+                                <div class="section-right-content">
+                                    <h3>Breathing deeply can be an effective way to deal with a stressful situation.
+                                        Taking a deep, full breath can slow the heartbeat and make a person feel calmer.
+                                    </h3>
+                                </div>
+                                <a href="https://www.medicalnewstoday.com/articles/breathing-techniques#deep"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next" id="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+            <h2 class="tag" style="text-align: center;">Yoga</h2>
+            <section id="slider-container" class="slider-container">
+                <div class="swiper home-slider-1">
+
+                    <div class="swiper-wrapper" id="swiper-wrapper-1">
+                        <!-- Dynamic Sliders -->
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Walk Regularly</h2>
+                                <div class="section-right-content">
+                                    <h3>Engaging in at least 30 minutes of exercise on three to five days of the week
+                                        could significantly lessen depressive symptoms. And if you’re short on time,
+                                        even a 10- to 15-minute spurt of exercise could make a difference, the Mayo
+                                        Clinic reports.</h3>
+                                </div>
+                                <a href="https://www.everydayhealth.com/depression-pictures/great-exercises-to-fight-depression.aspx"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Lift Some Weights</h2>
+                                <div class="section-right-content">
+                                    <h3>Lift Your Mood by Lifting Some Weights.Several studies say that adults who
+                                        exercise with weights are less likely to develop depression than those who never
+                                        exercise with weights.</h3>
+                                </div>
+                                <a href="https://www.everydayhealth.com/depression-pictures/great-exercises-to-fight-depression.aspx"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Combine Yoga With Other Treatments</h2>
+                                <div class="section-right-content">
+                                    <h3>Practicing yoga is another activity that can ease symptoms of depression,
+                                        especially when combined with usual treatmenty.Women who practiced HATHA yoga,
+                                        which combines yoga poses with breathing techniques, three times a week for four
+                                        weeks reported lower levels of depression, anxiety, and stress.</h3>
+                                </div>
+                                <a href="https://www.everydayhealth.com/depression-pictures/great-exercises-to-fight-depression.aspx"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Tai Chi Moves</h2>
+                                <div class="section-right-content">
+                                    <h3>Tai Chi is another Eastern tradition that can help ease life with depression.
+                                        Specifically, this slow, gentle practice may help reduce stress and relieve
+                                        symptoms of depression.</h3>
+                                </div>
+                                <a href="https://www.everydayhealth.com/depression-pictures/great-exercises-to-fight-depression.aspx"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Get a Healthy Dose of Sunlight</h2>
+                                <div class="section-right-content">
+                                    <h3>If you enjoy being outdoors, even simple activities such as gardening, throwing
+                                        a ball around with your kids, or washing your car may do your mood some good.
+                                        One reason may be that sunlight has been shown to facilitate increases in
+                                        serotonin, a mood-supporting brain chemical.</h3>
+                                </div>
+                                <a href="https://www.everydayhealth.com/depression-pictures/great-exercises-to-fight-depression.aspx"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next" id="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
+                </div>
+
+            </section>
+            <h2 class="tag" style="text-align: center;">Others</h2>
+            <section id="slider-container" class="slider-container">
+                <div class="swiper home-slider-1">
+
+                    <div class="swiper-wrapper" id="swiper-wrapper-1">
+                        <!-- Dynamic Sliders -->
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Music</h2>
+                                <div class="section-right-content">
+                                    <h3>Listening to music also has been linked to a release of oxytocin, which helps us
+                                        bond with others and socialize, which can be an important part of treating mood
+                                        disorders like depression.</h3>
+                                </div>
+                                <a href="https://www.medicalnewstoday.com/articles/music-therapy#how-it-works"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Laughter</h2>
+                                <div class="section-right-content">
+                                    <h3>A good laugh has great short-term effects. When you start to laugh, it doesn't
+                                        just lighten your load mentally, it actually induces physical changes in your
+                                        body. Laughter can Stimulate organs,Soothe tension. </h3>
+                                </div>
+                                <a href="https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/stress-relief/art-20044456"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Dancing</h2>
+                                <div class="section-right-content">
+                                    <h3>Dance therapy has a positive effect on participants experiencing symptoms of
+                                        depression.Dancing can be good for their health: it improves cardiovascular
+                                        endurance, muscle tone, ba- lance, and coordination.</h3>
+                                </div>
+                                <a href="https://www.researchgate.net/publication/329250524_Overcoming_Depression_with_Dance_Movement_Therapy_A_Case_Report"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Mindfulness</h2>
+                                <div class="section-right-content">
+                                    <h3>Focus on the present.
+                                        Rumination about past failures and catastrophizing about the future take up a
+                                        lot of mental space in depression. Eisendrath recommends mindfulness practices
+                                        that can help you focus on the present, break your attention away from these
+                                        thought spirals, and, over time, change these tendencies.</h3>
+                                </div>
+                                <a href=https://greatergood.berkeley.edu/article/item/can_mindfulness_help_when_youre_depressed"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="section-right">
+                                <h2 class="section-right-heading">Psychodynamic Therapy</h2>
+                                <div class="section-right-content">
+                                    <h3>Psychodynamic therapy for depression helps to promote self-examination and
+                                        self-reflection. It will allow you to develop coping strategies to deal with new
+                                        problems based on awareness and intentional action, rather than reactive
+                                        feelings and behaviors.</h3>
+                                </div>
+                                <a href="https://www.everydayhealth.com/depression-pictures/great-exercises-to-fight-depression.aspx"
+                                    target="_blank">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next" id="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+        </div>
+        <div class="helpline-contact">
+            <h2 class="top-tag"> Get In Touch </h2>
+            <div class="contact-box">
+                <div class="contact-box-1">
+                    <h2>Call us</h2>
+                    <i class="fa-solid fa-phone" style="font-size: 1.5rem;margin: 4px 0px;"></i>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, alias. Quas ratione corporis
+                        libero enim.</p>
+                    <a href="" style="text-decoration: none;">+918664784354</a>
+                </div>
+                <div class="contact-box-2">
+                    <h2>Message us</h2>
+                    <i class="fa-solid fa-message" style="font-size: 1.5rem;margin: 4px 0px;"></i>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem eaque commodi voluptatum, fugit
+                        nemo possimus.</p>
+                    <div class="contact-msg-box">
+                        <input type="text" name="contact-msg" id="contact-msg" placeholder="Write your message">
+                        <i class="fa-solid fa-paper-plane" style="font-size: 1.2rem;cursor: pointer;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <div style="text-align: center;">
+                    <h2 class="footer-heading" style="color: #ec42be;">DepreSsion</h2>
+                    <div class="desc" style="width: 250px;color: white;text-align: justify;">Depression (major
+                        depressive disorder) is a common and serious medical illness that negatively affects how you
+                        feel, the way you think and how you act.</div>
+                </div>
+
+                <div class="newsletter">
+                    <h4 style="color: #ff7200;">Subscribe to our newsletter</h4>
+                    <form action="" style="margin-top: 10px;">
+                        <input type="text" name="name-newsletter" id="name-newsletter" placeholder="Name">
+                        <input type="email" name="mail-newsletter" id="mail-newsletter" placeholder="Email">
+                        <input type="submit" value="Submit" id="submit-newsletter" style="width: 100px;">
+                    </form>
+
+                </div>
+                <div class="contact-footer">
+                    <div class="icons-footer">
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""> <i class="fa-brands fa-facebook"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-content" id="faq-content">
+            <p class="q"><span>Q:</span> 1)Do children get depression?</p>
+            <p class="a" style="margin-top: 5px ; margin-bottom: 5px;"><span>A:</span> Children are subject to the same
+                factors that cause depression in adults. These include: A change in physical health, life events,
+                heredity, or inheritance, environment, and chemical disturbance in the brain.</p>
+            <p class="q"><span>Q:</span>3)How long does depression last?</p>
+            <p class="a"><span>A:</span> If left untreated, various types of depressive disorders can last for months or
+                sometimes years. A major depressive episode is characterized by a set of symptoms that typically lasts
+                for a few months.</p>
+            <p class="q"><span>Q:</span>4)Are teenage years hard for everyone?</p>
+            <p class="a"><span>A:</span>Being a teenager can be tough, but it shouldn’t feel hopeless. If you have been
+                feeling sad most of the time for a few weeks or longer and you’re not able to concentrate or do the
+                things you used to enjoy, talk to a trusted adult about depression...</p><a href="https://www.nimh.nih.gov/health/publications/seasonal-affective-disorder-sad-more-than-the-winter-blues?utm_campaign=shareNIMH&utm_medium=Portal&utm_source=NIMHwebsite
+            ">Read More </a>
+            <p class="q"><span>Q:</span>6) Do people with Chronic Diseases suffer from depression more?</p>
+            <p class="a"><span>A:</span> Depression is common among people with chronic illnesses such as heart
+                disease...</p>
+            <a href="https://www.nimh.nih.gov/health/publications/chronic-illness-mental-health?utm_campaign=shareNIMH&utm_medium=Portal&utm_source=NIMHwebsite
+
+            ">Read More </a>
+            <p class="q"><span>Q:</span>7)Are there certain types of depression unique to women?</p>
+            <p class="a"><span>A:</span> Certain types of depression are unique to women. These include-Perimenopausal
+                Depression, Perinatal Depression...</p>
+            <a
+                href="https://www.nimh.nih.gov/health/publications/depression-in-women?utm_campaign=shareNIMH&utm_medium=Portal&utm_source=NIMHwebsite ">Read
+                More </a>
+        </div>
+        <div class="faq-bot" id="faq-bot">
+            <!-- <div class="tooltip">FAQ</div> -->
+            <i class="fa-solid fa-handshake-angle"></i>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".home-slider", {
+        allowSlideNext: true,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+    });
+    var swiper_1 = new Swiper(".home-slider-1", {
+        allowSlideNext: true,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+    });
+    var swiper_2 = new Swiper(".home-slider-2", {
+        allowSlideNext: true,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+    });
+
+</script>
+<script>
+    const faqBot = document.getElementById("faq-bot");
+    const faqContent = document.getElementById("faq-content");
+    var faqContentDisplay;
+    faqBot.addEventListener('mouseover', () => {
+        faqContent.style.display = "block";
+
+    });
+    faqBot.addEventListener('mouseout', () => {
+        faqContent.style.display = "none";
+    })
+    const params = (new URL(document.location)).searchParams;
+    const nameVal = params.get('username');
+    console.log(nameVal);
+    const hands = document.getElementById("hands-quote");
+    const handsHtml = `<h3 style="color:#ec42be">Hello,${nameVal}</h3>
+                    <h3 style='font-size:24px;'>We are here to help you</h3>
+                    <h2>H.O.P.E</h2>
+                    <h3>Hold On.Pain Ends</h3>`
+    hands.innerHTML = handsHtml;
+
+</script>
+
+</html>
